@@ -5,7 +5,7 @@ import psycopg2
 root = Tk()
  
 def implementDB():
-    connect = psycopg2.connect( host="localhost",password="avoogardo1", user="postgres",port="5422",dbname = "postgres")
+    connect = psycopg2.connect( host="localhost",password="artuiup1", user="postgres",port="5427",dbname = "postgres")
     curr = connect.cursor()
     curr.execute(''' CREATE TABLE studentdetail(ID SERIAL, name text , age  text , adress text ) ; ''')
     print("data base created")
@@ -15,7 +15,7 @@ def implementDB():
 #implementDB()
 
 def displayAll():
-    connect = psycopg2.connect(host="localhost",password="avoogardo1", user="postgres",port="5422",dbname = "postgres")
+    connect = psycopg2.connect(host="localhost",password="artuiup1", user="postgres",port="5424",dbname = "postgres")
     curr = connect.cursor()
     query = ''' select * from studentdetail '''
     curr.execute( query )
@@ -28,7 +28,7 @@ def displayAll():
     connect.close()
 
 def fetchData(id):
-    connect = psycopg2.connect(host="localhost",password="avoogardo1", user="postgres",port="5422",dbname = "postgres")
+    connect = psycopg2.connect(host="localhost",password="artuiup1", user="postgres",port="5422",dbname = "postgres")
     curr = connect.cursor()
     query = ''' select * from studentdetail where id = %s ''' 
     curr.execute( query ,(id) )
